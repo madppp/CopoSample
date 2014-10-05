@@ -80,7 +80,6 @@ hr.star-primary:after {
 }
 
 header {
-    text-align: center;
     color: black;
     background: #fff;
 }
@@ -446,4 +445,7 @@ footer .footer-below {
 
 img.img-responsive {
     margin-top: -0.5em;
+}
+header h2 {
+    text-align: center;
 }
