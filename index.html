@@ -85,8 +85,8 @@
                 <div class="col-lg-12">
                     <img class="img-responsive" src="http://placehold.it/800x600" alt="">
                     <!-- html5 audio -->
-                    <audio style="height:20px; width: 100%;" controls="controls">
-                    <source src="media/lon.mp3">
+                    <button id="b01">Play</button>
+                    <button id="b02">STOP</button>
                     </audio>
                     <!-- /html5 audio -->
                     </audio>
@@ -98,19 +98,19 @@
   
 
     <!-- Footer -->
-    <footer class="text-center">
-        
-        <div class="footer-below">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        Copyright © TOMI-E 2014
+    <div id="footer">
+        <footer class="text-center">
+            <div class="footer-below">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            Copyright © TOMI-E 2014
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </footer>
-
+        </footer>
+    </div>
     <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
     <div class="scroll-top page-scroll visible-xs visble-sm">
         <a class="btn btn-primary" href="#page-top">
@@ -136,6 +136,35 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="js/freelancer.js"></script>
+
+    <!-- music -->
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/ion.sound.js"></script>
+    <!-- footer -->
+    <script type="text/javascript" src="js/footerFixed.js"></script>
+
+    <script>
+    $(document).ready(function(){
+
+        ion.sound({
+            sounds: [
+                {name: "lon"}
+            ],
+            path: "sounds/",
+            preload: true,
+            volume: 1.0
+        });
+
+        $("#b01").on("click", function(){
+            ion.sound.play("lon");
+        });
+        $("#b02").on("click", function(){
+            ion.sound.stop("lon");
+        });
+
+    });
+</script>
+
 
 </body>
 
